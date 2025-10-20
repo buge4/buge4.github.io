@@ -6,7 +6,7 @@ import sourceIdentifierPlugin from 'vite-plugin-source-identifier'
 const isProd = process.env.BUILD_MODE === 'prod'
 
 export default defineConfig({
-base: '/buge4.veriton.io/',
+base: '/',
   plugins: [
     react(), 
     sourceIdentifierPlugin({
