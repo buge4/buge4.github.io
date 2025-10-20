@@ -9,6 +9,7 @@ import Overview from './pages/business-hub/Overview';
 import RandomMonitor from './pages/RandomMonitor';
 import VeritonGenesis from './pages/VeritonGenesis';
 import SaaS from './pages/SaaS';
+import AssistantsPage from './pages/AssistantsPage';
 import LoginForm from './components/LoginForm';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -18,6 +19,14 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginForm />} />
+        <Route
+          path="/assistants"
+          element={
+            <ProtectedRoute>
+              <AssistantsPage />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/admin"
           element={

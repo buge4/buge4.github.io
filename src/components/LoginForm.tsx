@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 interface LoginFormProps {
@@ -8,6 +9,7 @@ interface LoginFormProps {
 
 export default function LoginForm({ onSuccess, redirectTo = '/veriton-genesis' }: LoginFormProps) {
   const { signIn } = useAuth();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -24,11 +26,14 @@ export default function LoginForm({ onSuccess, redirectTo = '/veriton-genesis' }
       if (error) {
         setError(error.message);
       } else {
-        if (onSuccess) {
-          onSuccess();
-        } else {
-          window.location.href = redirectTo;
-        }
+        // Wait a moment for auth state to propagate
+        setTimeout(() => {
+          if (onSuccess) {
+            onSuccess();
+          } else {
+            navigate(redirectTo, { replace: true });
+          }
+        }, 100);
       }
     } catch (err) {
       setError('An unexpected error occurred');
