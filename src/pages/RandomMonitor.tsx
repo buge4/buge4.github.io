@@ -1,27 +1,23 @@
+import { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function RandomMonitor() {
+  useEffect(() => {
+    // Redirect to the standalone TVRF monitor HTML
+    window.location.href = '/tvrf-monitor.html';
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-900">
       <Header />
-      <main className="flex-1 bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Random Monitor
-            </h1>
-            <p className="text-xl text-gray-600 mb-12">
-              Real-time monitoring and verification of randomness generation
-            </p>
-            <div className="bg-white rounded-2xl shadow-xl p-12 border border-gray-200">
-              <div className="flex items-center justify-center h-64">
-                <p className="text-gray-500 text-lg">
-                  Content coming soon...
-                </p>
-              </div>
-            </div>
+      <main className="flex-1 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-pulse mb-4">
+            <div className="h-12 w-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
           </div>
+          <p className="text-gray-400 text-lg">Loading TVRF Monitor...</p>
+          <p className="text-gray-500 text-sm mt-2">Redirecting to complete system...</p>
         </div>
       </main>
       <Footer />
