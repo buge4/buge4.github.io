@@ -32,7 +32,7 @@ export default function Footer() {
           
           <div>
             <h4 className="font-semibold mb-4">Connect</h4>
-            <a href="/business-hub" className="inline-block px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition text-sm font-medium">
+            <a href="#/business-hub" className="inline-block px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition text-sm font-medium">
               Business Hub
             </a>
           </div>

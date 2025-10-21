@@ -29,7 +29,7 @@ export default function HeroSection({ section }: HeroSectionProps) {
           <button className="px-8 py-3 bg-[#1a2b4a] text-white rounded-lg hover:bg-[#243654] transition font-medium">
             See the Technology →
           </button>
-          <a href="/business-hub" className="px-8 py-3 border-2 border-[#1a2b4a] text-[#1a2b4a] rounded-lg hover:bg-gray-50 transition font-medium text-center">
+          <a href="#/business-hub" className="px-8 py-3 border-2 border-[#1a2b4a] text-[#1a2b4a] rounded-lg hover:bg-gray-50 transition font-medium text-center">
             View Business Hub →
           </a>
         </div>

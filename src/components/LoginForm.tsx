@@ -7,8 +7,8 @@ interface LoginFormProps {
   redirectTo?: string;
 }
 
-export default function LoginForm({ onSuccess, redirectTo = '/veriton-genesis' }: LoginFormProps) {
-  const { signIn } = useAuth();
+export default function LoginForm({ onSuccess, redirectTo }: LoginFormProps) {
+  const { signIn, userRole } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -26,14 +26,32 @@ export default function LoginForm({ onSuccess, redirectTo = '/veriton-genesis' }
       if (error) {
         setError(error.message);
       } else {
-        // Wait a moment for auth state to propagate
+        // Wait for auth state and user role to propagate
         setTimeout(() => {
           if (onSuccess) {
             onSuccess();
           } else {
-            navigate(redirectTo, { replace: true });
+            // Role-based redirect logic
+            let destination = redirectTo;
+            if (!destination) {
+              switch (userRole) {
+                case 'super_admin':
+                  destination = '/veriton-genesis';
+                  break;
+                case 'ai_admin':
+                  destination = '/admin';
+                  break;
+                case 'employee':
+                  destination = '/assistants';
+                  break;
+                default:
+                  destination = '/';
+                  break;
+              }
+            }
+            navigate(destination, { replace: true });
           }
-        }, 100);
+        }, 500);
       }
     } catch (err) {
       setError('An unexpected error occurred');
