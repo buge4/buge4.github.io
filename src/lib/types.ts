@@ -51,7 +51,7 @@ export interface AIConversation {
 }
 
 // Kingmaker Army types - Supabase Schema
-export type AgentStatus = 'online' | 'working' | 'idle' | 'offline';
+export type AgentStatus = 'online' | 'active' | 'working' | 'idle' | 'offline';
 
 export interface KingmakerAgent {
   id: string; // UUID in Supabase

@@ -11,30 +11,10 @@ export default function Analytics() {
   const loading = pageLoading || blocksLoading;
   const error = pageError || blocksError;
 
-  // Mock data for analytics (to be replaced with database content when available)
-  const trafficData = [
-    { month: 'Jan', visitors: 12500, pageViews: 45000 },
-    { month: 'Feb', visitors: 15800, pageViews: 52000 },
-    { month: 'Mar', visitors: 18200, pageViews: 61000 },
-    { month: 'Apr', visitors: 22400, pageViews: 75000 },
-    { month: 'May', visitors: 28600, pageViews: 89000 },
-    { month: 'Jun', visitors: 35200, pageViews: 102000 },
-  ];
-
-  const engagementMetrics = [
-    { label: 'Avg. Session Duration', value: '4:32', change: '+12%', trend: 'up' },
-    { label: 'Bounce Rate', value: '32.4%', change: '-8%', trend: 'up' },
-    { label: 'Pages per Session', value: '5.8', change: '+15%', trend: 'up' },
-    { label: 'Conversion Rate', value: '3.2%', change: '+22%', trend: 'up' },
-  ];
-
-  const topPages = [
-    { page: '/platforms/youlottery', views: 45200, rate: '28%' },
-    { page: '/technology/tvrf', views: 38600, rate: '24%' },
-    { page: '/platforms/gameforge', views: 32400, rate: '20%' },
-    { page: '/business-hub', views: 28900, rate: '18%' },
-    { page: '/contact', views: 16100, rate: '10%' },
-  ];
+  // Real analytics data would be fetched from Supabase analytics tables
+  const trafficData: { month: string; visitors: number; pageViews: number }[] = [];
+  const engagementMetrics: { label: string; value: string; change: string; trend: string }[] = [];
+  const topPages: { page: string; views: number; rate: string }[] = [];
 
   if (loading) {
     return (
@@ -117,10 +97,9 @@ export default function Analytics() {
               </div>
               <h3 className="font-semibold text-gray-900">TOTAL VISITORS</h3>
             </div>
-            <div className="text-3xl font-bold text-gray-900 mb-1">132,700</div>
-            <div className="flex items-center gap-1 text-green-600 text-sm">
-              <ArrowUp className="w-4 h-4" />
-              <span>+24% from last period</span>
+            <div className="text-3xl font-bold text-gray-900 mb-1">-</div>
+            <div className="flex items-center gap-1 text-gray-400 text-sm">
+              <span>No data available</span>
             </div>
           </div>
 
@@ -132,10 +111,9 @@ export default function Analytics() {
               </div>
               <h3 className="font-semibold text-gray-900">PAGE VIEWS</h3>
             </div>
-            <div className="text-3xl font-bold text-gray-900 mb-1">424,000</div>
-            <div className="flex items-center gap-1 text-green-600 text-sm">
-              <ArrowUp className="w-4 h-4" />
-              <span>+31% from last period</span>
+            <div className="text-3xl font-bold text-gray-900 mb-1">-</div>
+            <div className="flex items-center gap-1 text-gray-400 text-sm">
+              <span>No data available</span>
             </div>
           </div>
 
@@ -147,10 +125,9 @@ export default function Analytics() {
               </div>
               <h3 className="font-semibold text-gray-900">ACTIVE USERS</h3>
             </div>
-            <div className="text-3xl font-bold text-gray-900 mb-1">8,450</div>
-            <div className="flex items-center gap-1 text-green-600 text-sm">
-              <ArrowUp className="w-4 h-4" />
-              <span>+18% from last period</span>
+            <div className="text-3xl font-bold text-gray-900 mb-1">-</div>
+            <div className="flex items-center gap-1 text-gray-400 text-sm">
+              <span>No data available</span>
             </div>
           </div>
 
@@ -162,10 +139,9 @@ export default function Analytics() {
               </div>
               <h3 className="font-semibold text-gray-900">COUNTRIES</h3>
             </div>
-            <div className="text-3xl font-bold text-gray-900 mb-1">42</div>
-            <div className="flex items-center gap-1 text-green-600 text-sm">
-              <ArrowUp className="w-4 h-4" />
-              <span>+5 new this period</span>
+            <div className="text-3xl font-bold text-gray-900 mb-1">-</div>
+            <div className="flex items-center gap-1 text-gray-400 text-sm">
+              <span>No data available</span>
             </div>
           </div>
         </div>
@@ -178,109 +154,126 @@ export default function Analytics() {
           </div>
           
           {/* Simple Bar Chart */}
-          <div className="space-y-4">
-            {trafficData.map((data, index) => {
-              const maxVisitors = Math.max(...trafficData.map(d => d.visitors));
-              const visitorWidth = (data.visitors / maxVisitors) * 100;
-              const pageViewWidth = (data.pageViews / 102000) * 100;
-              
-              return (
-                <div key={index} className="space-y-2">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="font-semibold text-gray-700 w-12">{data.month}</span>
-                    <span className="text-gray-600">Visitors: {data.visitors.toLocaleString()}</span>
-                    <span className="text-gray-600">Page Views: {data.pageViews.toLocaleString()}</span>
-                  </div>
-                  <div className="flex gap-2">
-                    <div className="flex-1">
-                      <div className="h-8 bg-gray-100 rounded">
-                        <div 
-                          className="h-8 bg-gradient-to-r from-[#1a2b4a] to-purple-600 rounded transition-all duration-500"
-                          style={{ width: `${visitorWidth}%` }}
-                        ></div>
+          {trafficData.length > 0 ? (
+            <div className="space-y-4">
+              {trafficData.map((data, index) => {
+                const maxVisitors = Math.max(...trafficData.map(d => d.visitors));
+                const visitorWidth = (data.visitors / maxVisitors) * 100;
+                const pageViewWidth = (data.pageViews / 102000) * 100;
+                
+                return (
+                  <div key={index} className="space-y-2">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="font-semibold text-gray-700 w-12">{data.month}</span>
+                      <span className="text-gray-600">Visitors: {data.visitors.toLocaleString()}</span>
+                      <span className="text-gray-600">Page Views: {data.pageViews.toLocaleString()}</span>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="flex-1">
+                        <div className="h-8 bg-gray-100 rounded">
+                          <div 
+                            className="h-8 bg-gradient-to-r from-[#1a2b4a] to-purple-600 rounded transition-all duration-500"
+                            style={{ width: `${visitorWidth}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <div className="h-8 bg-gray-100 rounded">
+                          <div 
+                            className="h-8 bg-gradient-to-r from-blue-500 to-blue-300 rounded transition-all duration-500"
+                            style={{ width: `${pageViewWidth}%` }}
+                          ></div>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex-1">
-                      <div className="h-8 bg-gray-100 rounded">
-                        <div 
-                          className="h-8 bg-gradient-to-r from-blue-500 to-blue-300 rounded transition-all duration-500"
-                          style={{ width: `${pageViewWidth}%` }}
-                        ></div>
-                      </div>
-                    </div>
                   </div>
+                );
+              })}
+              <div className="flex gap-6 mt-6 justify-center">
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 bg-gradient-to-r from-[#1a2b4a] to-purple-600 rounded"></div>
+                  <span className="text-sm text-gray-600">Visitors</span>
                 </div>
-              );
-            })}
-          </div>
-          
-          <div className="flex gap-6 mt-6 justify-center">
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-gradient-to-r from-[#1a2b4a] to-purple-600 rounded"></div>
-              <span className="text-sm text-gray-600">Visitors</span>
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-blue-300 rounded"></div>
+                  <span className="text-sm text-gray-600">Page Views</span>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-blue-300 rounded"></div>
-              <span className="text-sm text-gray-600">Page Views</span>
+          ) : (
+            <div className="text-center py-12 text-gray-500">
+              <p>No traffic data available. Connect analytics service to populate this chart.</p>
             </div>
-          </div>
+          )}
         </div>
 
         {/* User Engagement Statistics */}
         <div className="bg-white rounded-lg shadow-sm p-8 mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">User Engagement Statistics</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {engagementMetrics.map((metric, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition">
-                <p className="text-sm text-gray-600 mb-2">{metric.label}</p>
-                <div className="text-3xl font-bold text-[#1a2b4a] mb-2">{metric.value}</div>
-                <div className="flex items-center gap-1 text-green-600 text-sm">
-                  {metric.trend === 'up' ? (
-                    <ArrowUp className="w-4 h-4" />
-                  ) : (
-                    <ArrowDown className="w-4 h-4" />
-                  )}
-                  <span>{metric.change}</span>
+          {engagementMetrics.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {engagementMetrics.map((metric, index) => (
+                <div key={index} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition">
+                  <p className="text-sm text-gray-600 mb-2">{metric.label}</p>
+                  <div className="text-3xl font-bold text-[#1a2b4a] mb-2">{metric.value}</div>
+                  <div className="flex items-center gap-1 text-green-600 text-sm">
+                    {metric.trend === 'up' ? (
+                      <ArrowUp className="w-4 h-4" />
+                    ) : (
+                      <ArrowDown className="w-4 h-4" />
+                    )}
+                    <span>{metric.change}</span>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12 text-gray-500">
+              <p>No engagement metrics available. Configure analytics tracking to populate this section.</p>
+            </div>
+          )}
         </div>
 
         {/* Top Performing Pages */}
         <div className="bg-white rounded-lg shadow-sm p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Top Performing Pages</h2>
           
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Page</th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Views</th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Share</th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Visual</th>
-                </tr>
-              </thead>
-              <tbody>
-                {topPages.map((page, index) => (
-                  <tr key={index} className="border-b border-gray-100 hover:bg-gray-50 transition">
-                    <td className="py-4 px-4 font-mono text-sm text-[#1a2b4a]">{page.page}</td>
-                    <td className="py-4 px-4 text-gray-900">{page.views.toLocaleString()}</td>
-                    <td className="py-4 px-4 text-gray-900">{page.rate}</td>
-                    <td className="py-4 px-4">
-                      <div className="w-full bg-gray-100 rounded-full h-2">
-                        <div 
-                          className="bg-gradient-to-r from-[#1a2b4a] to-purple-600 h-2 rounded-full transition-all duration-500"
-                          style={{ width: page.rate }}
-                        ></div>
-                      </div>
-                    </td>
+          {topPages.length > 0 ? (
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-gray-200">
+                    <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Page</th>
+                    <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Views</th>
+                    <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Share</th>
+                    <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">Visual</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {topPages.map((page, index) => (
+                    <tr key={index} className="border-b border-gray-100 hover:bg-gray-50 transition">
+                      <td className="py-4 px-4 font-mono text-sm text-[#1a2b4a]">{page.page}</td>
+                      <td className="py-4 px-4 text-gray-900">{page.views.toLocaleString()}</td>
+                      <td className="py-4 px-4 text-gray-900">{page.rate}</td>
+                      <td className="py-4 px-4">
+                        <div className="w-full bg-gray-100 rounded-full h-2">
+                          <div 
+                            className="bg-gradient-to-r from-[#1a2b4a] to-purple-600 h-2 rounded-full transition-all duration-500"
+                            style={{ width: page.rate }}
+                          ></div>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div className="text-center py-12 text-gray-500">
+              <p>No page analytics available. Enable page tracking to populate this table.</p>
+            </div>
+          )}
         </div>
       </div>
 

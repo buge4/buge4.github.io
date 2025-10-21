@@ -5,6 +5,7 @@ import AgentCard from '../components/AgentCard';
 import CommandTerminal from '../components/CommandTerminal';
 import ProjectPipeline from '../components/ProjectPipeline';
 import AnalyticsDashboard from '../components/AnalyticsDashboard';
+import ArmyDashboard from '../components/ArmyDashboard';
 import { supabase } from '../lib/supabase';
 import { KingmakerAgent, KingmakerProject, SystemMetrics } from '../lib/types';
 import { useAuth } from '../contexts/AuthContext';
@@ -13,6 +14,7 @@ export default function VeritonGenesis() {
   const { user, signOut } = useAuth();
   const [agents, setAgents] = useState<KingmakerAgent[]>([]);
   const [projects, setProjects] = useState<KingmakerProject[]>([]);
+  const [activeTab, setActiveTab] = useState<'overview' | 'army' | 'projects' | 'analytics'>('overview');
   const [systemMetrics, setSystemMetrics] = useState<SystemMetrics>({
     engines_online: 0,
     active_projects: 0,
@@ -159,8 +161,55 @@ export default function VeritonGenesis() {
             </p>
           </div>
 
-          {/* System Status Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          {/* Navigation Tabs */}
+          <div className="flex gap-2 mb-8 border-b border-[#3d4558]">
+            <button
+              onClick={() => setActiveTab('overview')}
+              className={`px-6 py-3 font-semibold transition-all ${
+                activeTab === 'overview'
+                  ? 'text-[#00d9ff] border-b-2 border-[#00d9ff]'
+                  : 'text-[#7b8599] hover:text-[#c8d0dd]'
+              }`}
+            >
+              Overview
+            </button>
+            <button
+              onClick={() => setActiveTab('army')}
+              className={`px-6 py-3 font-semibold transition-all ${
+                activeTab === 'army'
+                  ? 'text-[#00d9ff] border-b-2 border-[#00d9ff]'
+                  : 'text-[#7b8599] hover:text-[#c8d0dd]'
+              }`}
+            >
+              Army Dashboard
+            </button>
+            <button
+              onClick={() => setActiveTab('projects')}
+              className={`px-6 py-3 font-semibold transition-all ${
+                activeTab === 'projects'
+                  ? 'text-[#00d9ff] border-b-2 border-[#00d9ff]'
+                  : 'text-[#7b8599] hover:text-[#c8d0dd]'
+              }`}
+            >
+              Projects
+            </button>
+            <button
+              onClick={() => setActiveTab('analytics')}
+              className={`px-6 py-3 font-semibold transition-all ${
+                activeTab === 'analytics'
+                  ? 'text-[#00d9ff] border-b-2 border-[#00d9ff]'
+                  : 'text-[#7b8599] hover:text-[#c8d0dd]'
+              }`}
+            >
+              Analytics
+            </button>
+          </div>
+
+          {/* Overview Tab */}
+          {activeTab === 'overview' && (
+            <>
+              {/* System Status Bar */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             <div className="bg-[#1a1f35] rounded-xl p-6 border border-[#3d4558]">
               <div className="text-xs text-[#c8d0dd] uppercase tracking-wide mb-2">
                 Engines Online
@@ -219,11 +268,34 @@ export default function VeritonGenesis() {
             <ProjectPipeline projects={projects} />
           </div>
 
-          {/* Analytics Dashboard */}
-          <div>
-            <h2 className="text-2xl font-semibold text-[#f5f7fa] mb-4">Analytics</h2>
-            <AnalyticsDashboard metrics={systemMetrics} />
-          </div>
+              {/* Analytics Dashboard */}
+              <div>
+                <h2 className="text-2xl font-semibold text-[#f5f7fa] mb-4">Analytics</h2>
+                <AnalyticsDashboard metrics={systemMetrics} />
+              </div>
+            </>
+          )}
+
+          {/* Army Dashboard Tab */}
+          {activeTab === 'army' && (
+            <ArmyDashboard agents={agents} />
+          )}
+
+          {/* Projects Tab */}
+          {activeTab === 'projects' && (
+            <div>
+              <h2 className="text-2xl font-semibold text-[#f5f7fa] mb-4">Project Pipeline</h2>
+              <ProjectPipeline projects={projects} />
+            </div>
+          )}
+
+          {/* Analytics Tab */}
+          {activeTab === 'analytics' && (
+            <div>
+              <h2 className="text-2xl font-semibold text-[#f5f7fa] mb-4">System Analytics</h2>
+              <AnalyticsDashboard metrics={systemMetrics} />
+            </div>
+          )}
         </div>
       </main>
 

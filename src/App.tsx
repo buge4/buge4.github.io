@@ -44,7 +44,7 @@ function App() {
         <Route
           path="/veriton-genesis"
           element={
-            <ProtectedRoute requiredRole="veriton_genesis_access">
+            <ProtectedRoute requiredRole="super_admin">
               <VeritonGenesis />
             </ProtectedRoute>
           }
