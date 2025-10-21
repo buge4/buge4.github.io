@@ -22,9 +22,29 @@ export default function ProtectedRoute({
       if (!user) {
         // Not logged in - redirect to login
         navigate(redirectTo, { replace: true });
-      } else if (requiredRole && userRole !== requiredRole && userRole !== 'admin') {
-        // Logged in but doesn't have required role
-        setAccessDenied(true);
+      } else {
+        // Map roles to access permissions
+        const hasAccess = () => {
+          if (!requiredRole) return true;
+          
+          // super_admin has access to everything
+          if (userRole === 'super_admin') return true;
+          
+          // For veriton-genesis access
+          if (requiredRole === 'veriton_genesis_access' && userRole === 'super_admin') return true;
+          
+          // For admin panel access
+          if (requiredRole === 'admin' && (userRole === 'super_admin' || userRole === 'ai_admin')) return true;
+          
+          // Exact role match
+          if (userRole === requiredRole) return true;
+          
+          return false;
+        };
+
+        if (!hasAccess()) {
+          setAccessDenied(true);
+        }
       }
     }
   }, [user, userRole, loading, navigate, requiredRole, redirectTo]);
