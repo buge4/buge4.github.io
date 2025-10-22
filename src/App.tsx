@@ -35,11 +35,46 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/business-hub" element={<BusinessHubPage />} />
-        <Route path="/business-hub/investor-view" element={<InvestorView />} />
-        <Route path="/business-hub/analytics" element={<Analytics />} />
-        <Route path="/business-hub/documents" element={<Documents />} />
-        <Route path="/business-hub/overview" element={<Overview />} />
+        <Route
+          path="/business-hub"
+          element={
+            <ProtectedRoute>
+              <BusinessHubPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/business-hub/investor-view"
+          element={
+            <ProtectedRoute>
+              <InvestorView />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/business-hub/analytics"
+          element={
+            <ProtectedRoute>
+              <Analytics />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/business-hub/documents"
+          element={
+            <ProtectedRoute>
+              <Documents />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/business-hub/overview"
+          element={
+            <ProtectedRoute>
+              <Overview />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/random-monitor" element={<RandomMonitor />} />
         <Route
           path="/veriton-genesis"

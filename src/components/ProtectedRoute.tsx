@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom';
 
 interface ProtectedRouteProps {
   children: ReactNode;
-  requiredRole?: string;
+  requiredRole?: string | null;
   redirectTo?: string;
 }
 
 export default function ProtectedRoute({ 
   children, 
-  requiredRole = 'veriton_genesis_access',
+  requiredRole,
   redirectTo = '/login'
 }: ProtectedRouteProps) {
   const { user, userRole, loading } = useAuth();
@@ -25,18 +25,24 @@ export default function ProtectedRoute({
       } else {
         // Map roles to access permissions
         const hasAccess = () => {
-          if (!requiredRole) return true;
+          // If no role is required, any authenticated user can access
+          if (requiredRole === null || requiredRole === undefined) return true;
           
-          // super_admin has access to everything
+          // CRITICAL: super_admin role required for Genesis system access
+          // Only Bjørn (bvhauge@gmail.com) should have super_admin role
+          if (requiredRole === 'super_admin') {
+            // Explicit check - ONLY super_admin can access Genesis
+            // Employees, ai_admin, and other roles are explicitly DENIED
+            return userRole === 'super_admin';
+          }
+          
+          // super_admin has access to everything else
           if (userRole === 'super_admin') return true;
-          
-          // For veriton-genesis access
-          if (requiredRole === 'veriton_genesis_access' && userRole === 'super_admin') return true;
           
           // For admin panel access
           if (requiredRole === 'admin' && (userRole === 'super_admin' || userRole === 'ai_admin')) return true;
           
-          // Exact role match
+          // Exact role match for other routes
           if (userRole === requiredRole) return true;
           
           return false;
@@ -66,7 +72,12 @@ export default function ProtectedRoute({
               Access Denied
             </h2>
             <p className="text-[#c8d0dd] mb-6">
-              You do not have permission to access this page.
+              {requiredRole === 'super_admin' 
+                ? 'This area is restricted to Super Administrator only.'
+                : 'You do not have permission to access this page.'}
+            </p>
+            <p className="text-[#7b8599] text-sm mb-6">
+              Your current role: {userRole || 'None'}
             </p>
             <button
               onClick={() => navigate('/', { replace: true })}

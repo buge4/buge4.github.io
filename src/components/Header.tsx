@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
 export default function Header() {
-  const { user, signOut } = useAuth();
+  const { user, userRole, signOut } = useAuth();
   const navigate = useNavigate();
 
   const handleSignOut = async () => {
@@ -33,9 +33,12 @@ export default function Header() {
             <Link to="/random-monitor" className="text-gray-700 hover:text-gray-900 transition">
               Random Monitor
             </Link>
-            <Link to="/veriton-genesis" className="text-gray-700 hover:text-gray-900 transition">
-              Veriton Genesis
-            </Link>
+            {/* Genesis link only visible to super_admin */}
+            {userRole === 'super_admin' && (
+              <Link to="/veriton-genesis" className="text-gray-700 hover:text-gray-900 transition">
+                Veriton Genesis
+              </Link>
+            )}
             <Link to="/saas" className="text-gray-700 hover:text-gray-900 transition">
               SaaS
             </Link>
