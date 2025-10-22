@@ -1,20 +1,23 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 interface ProtectedRouteProps {
   children: ReactNode;
   requiredRole?: string | null;
+  allowedRoles?: string[];
   redirectTo?: string;
 }
 
 export default function ProtectedRoute({ 
   children, 
   requiredRole,
+  allowedRoles,
   redirectTo = '/login'
 }: ProtectedRouteProps) {
   const { user, userRole, loading } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [accessDenied, setAccessDenied] = useState(false);
 
   useEffect(() => {
@@ -25,6 +28,11 @@ export default function ProtectedRoute({
       } else {
         // Map roles to access permissions
         const hasAccess = () => {
+          // If allowedRoles array is provided, check if user role is in the array
+          if (allowedRoles && allowedRoles.length > 0) {
+            return userRole ? allowedRoles.includes(userRole) : false;
+          }
+          
           // If no role is required, any authenticated user can access
           if (requiredRole === null || requiredRole === undefined) return true;
           
@@ -49,11 +57,22 @@ export default function ProtectedRoute({
         };
 
         if (!hasAccess()) {
+          // Special handling for Genesis system access
+          // Redirect non-super-admins to their appropriate dashboard
+          if (location.pathname === '/veriton-genesis' && requiredRole === 'super_admin') {
+            if (userRole === 'employee') {
+              navigate('/assistants', { replace: true });
+              return;
+            } else if (userRole === 'ai_admin') {
+              navigate('/admin', { replace: true });
+              return;
+            }
+          }
           setAccessDenied(true);
         }
       }
     }
-  }, [user, userRole, loading, navigate, requiredRole, redirectTo]);
+  }, [user, userRole, loading, navigate, requiredRole, allowedRoles, redirectTo, location]);
 
   if (loading) {
     return (

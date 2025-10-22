@@ -38,7 +38,7 @@ function App() {
         <Route
           path="/business-hub"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={['employee', 'ai_admin', 'super_admin']}>
               <BusinessHubPage />
             </ProtectedRoute>
           }
@@ -46,7 +46,7 @@ function App() {
         <Route
           path="/business-hub/investor-view"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={['employee', 'ai_admin', 'super_admin']}>
               <InvestorView />
             </ProtectedRoute>
           }
@@ -54,7 +54,7 @@ function App() {
         <Route
           path="/business-hub/analytics"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={['employee', 'ai_admin', 'super_admin']}>
               <Analytics />
             </ProtectedRoute>
           }
@@ -62,7 +62,7 @@ function App() {
         <Route
           path="/business-hub/documents"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={['employee', 'ai_admin', 'super_admin']}>
               <Documents />
             </ProtectedRoute>
           }
@@ -70,7 +70,7 @@ function App() {
         <Route
           path="/business-hub/overview"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={['employee', 'ai_admin', 'super_admin']}>
               <Overview />
             </ProtectedRoute>
           }
