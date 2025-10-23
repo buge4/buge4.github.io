@@ -14,7 +14,7 @@
 **/.Python
 **/build/
 **/develop-eggs/
-**/dist/
+# **/dist/ - Temporarily commented for emergency deploy
 **/downloads/
 **/eggs/
 **/.eggs/
@@ -233,7 +233,7 @@
 **/public
 
 # Vue.js
-**/dist/
+# **/dist/ - Temporarily commented for emergency deploy
 **/.tmp
 **/.cache
 
@@ -276,7 +276,7 @@
 
 # Expo
 **/.expo/
-**/dist/
+# **/dist/ - Temporarily commented for emergency deploy
 **/npm-debug.*
 **/yarn-error.*
 **/.expo-shared
@@ -345,7 +345,7 @@
 # NetBeans
 **/nbproject/private/
 **/.nbbuild/
-**/dist/
+# **/dist/ - Temporarily commented for emergency deploy
 **/nbdist/
 **/.nb-gradle/
 
@@ -710,7 +710,7 @@
 # NetBeans
 **/nbproject/private/
 **/.nbbuild/
-**/dist/
+# **/dist/ - Temporarily commented for emergency deploy
 **/nbdist/
 **/.nb-gradle/
 **/build/
@@ -817,7 +817,7 @@
 **/.cache/
 **/cache/
 **/build/
-**/dist/
+# **/dist/ - Temporarily commented for emergency deploy
 **/out/
 **/target/
 **/.next/
