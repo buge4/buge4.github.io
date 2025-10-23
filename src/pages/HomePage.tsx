@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useSections } from '../hooks';
 import HeroSection from '../components/HeroSection';
 import WhyRandomnessMatters from '../components/WhyRandomnessMatters';
@@ -12,7 +14,37 @@ import Footer from '../components/Footer';
 import type { WebsiteSection } from '../lib/types';
 
 export default function HomePage() {
+  const location = useLocation();
   const { sections, loading, error, refetch } = useSections();
+
+  useEffect(() => {
+    // Handle hash-based scrolling when component mounts or URL changes
+    const scrollToSection = () => {
+      // Get the hash from the URL (e.g., "#technology" from "/#technology")
+      const hash = window.location.hash;
+      
+      // Check if hash exists and starts with # followed by section name
+      if (hash && hash.length > 1) {
+        // Extract section ID (remove the # symbol)
+        const sectionId = hash.substring(1);
+        
+        // Valid sections for this page
+        const validSections = ['technology', 'markets', 'impact'];
+        
+        if (validSections.includes(sectionId)) {
+          // Small delay to ensure DOM is fully rendered
+          setTimeout(() => {
+            const element = document.getElementById(sectionId);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }, 100);
+        }
+      }
+    };
+
+    scrollToSection();
+  }, [location]);
 
   // Helper function to get section data by name
   const getSection = (sectionName: string): WebsiteSection | undefined => {

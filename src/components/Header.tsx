@@ -21,13 +21,46 @@ export default function Header() {
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#technology" className="text-gray-700 hover:text-gray-900 transition">
+            <a 
+              href="/#technology" 
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('technology');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  window.history.pushState(null, '', '/#technology');
+                }
+              }}
+              className="text-gray-700 hover:text-gray-900 transition"
+            >
               Technology
             </a>
-            <a href="#markets" className="text-gray-700 hover:text-gray-900 transition">
+            <a 
+              href="/#markets" 
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('markets');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  window.history.pushState(null, '', '/#markets');
+                }
+              }}
+              className="text-gray-700 hover:text-gray-900 transition"
+            >
               Markets
             </a>
-            <a href="#impact" className="text-gray-700 hover:text-gray-900 transition">
+            <a 
+              href="/#impact" 
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('impact');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  window.history.pushState(null, '', '/#impact');
+                }
+              }}
+              className="text-gray-700 hover:text-gray-900 transition"
+            >
               Impact
             </a>
             <Link to="/random-monitor" className="text-gray-700 hover:text-gray-900 transition">
