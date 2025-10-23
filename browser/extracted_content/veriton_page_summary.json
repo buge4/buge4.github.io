@@ -1,0 +1,31 @@
+📄 Extracted from page: 
+URL: https://veriton.io/
+
+Extracted content:
+```json
+{
+  "title": "Veriton",
+  "url": "https://veriton.io/",
+  "summary": "The Veriton website introduces TVRF, a patent-pending technology designed to generate pure, oracle-free randomness on the blockchain. It positions TVRF as a breakthrough solution for various sectors including Gaming, AI, Finance, NFTs, and Security, highlighting a total addressable market exceeding $800 billion. The page emphasizes Veriton's unique advantages, such as its proprietary technology that faces no direct competition, promises immediate revenue generation, and leverages network effects. TVRF is presented as a significantly more cost-effective ($0.005 per call vs. $4-25 for Chainlink VRF) and trustworthy (zero trust required) alternative to existing randomness solutions, offering instant processing speed. The company projects a substantial economic and social impact, aiming to affect over 1 billion users and create more than $50 billion in annual value by 2027 through enhanced fairness in AI, gaming, and improved digital security.",
+  "key_points": [
+    "Veriton introduces TVRF, a patent-pending technology for pure, oracle-free blockchain randomness.",
+    "TVRF targets major markets including Gaming, AI, Finance, NFTs, and Security, with an $800B+ market opportunity.",
+    "Key competitive advantages include patent-protected technology, lack of direct competition, immediate revenue potential, and network effects.",
+    "TVRF is claimed to be 99.9% cheaper than Chainlink VRF, offer instant processing, and require zero trust for verifiable randomness.",
+    "The technology aims to drive significant economic impact ($50B+ annually) and reach over 1 billion users by 2027.",
+    "Veriton addresses a 'perfect storm of opportunity' fueled by blockchain maturity, regulatory clarity, market demand, and the AI revolution.",
+    "It promises to make gaming provably fair, enable unbiased AI, and strengthen crypto security globally."
+  ],
+  "relevant_links": [
+    "https://veriton.io/#technology",
+    "https://veriton.io/#markets",
+    "https://veriton.io/#impact",
+    "https://veriton.io/#/random-monitor",
+    "https://veriton.io/#/saas",
+    "https://veriton.io/#/login",
+    "https://veriton.io/#/admin",
+    "https://veriton.io/#/business-hub"
+  ],
+  "file_name": "veriton_page_summary.json"
+}
+```

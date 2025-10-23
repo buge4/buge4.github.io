@@ -1,0 +1,24 @@
+📄 Extracted from page: Page not found · GitHub Pages
+URL: https://veriton.io/login
+
+Extracted content:
+```json
+{
+    "title": "Page not found · GitHub Pages",
+    "url": "https://veriton.io/login",
+    "summary": "This page is a standard GitHub Pages 404 'Page not found' error. It indicates that the requested file for the login page does not exist at the provided URL. Consequently, there are no login forms, navigation elements, chat features, messaging interfaces, or other components typically found on a functional login page. The content is entirely focused on explaining the 404 error and providing troubleshooting tips for site owners.",
+    "key_points": [
+        "The page displays a '404 File not found' error.",
+        "It states that the site configured at this address does not contain the requested file.",
+        "Suggestions are provided for site owners, including checking filename case, file permissions, and ensuring an 'index.html' file for root URLs.",
+        "No login forms, buttons (other than links), navigation elements, chat features, or messaging system components are present on this error page.",
+        "The page includes links to GitHub Pages documentation, GitHub Status, and GitHub Status Twitter account."
+    ],
+    "relevant_links": [
+        "https://help.github.com/pages/",
+        "https://githubstatus.com",
+        "https://twitter.com/githubstatus"
+    ],
+    "file_name": "veriton_login_404_error_page.json"
+}
+```

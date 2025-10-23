@@ -1,0 +1,21 @@
+📄 Extracted from page: 
+URL: https://veriton.io/#/login
+
+Extracted content:
+```json
+{
+    "title": "Veriton Genesis Access Login",
+    "url": "https://veriton.io/#/login",
+    "summary": "This page is a login interface for 'Veriton Genesis Access', requiring users to enter an email address and password to sign in. It also provides a link to return to the homepage. There is no information or mention of '5 phases', 'phases', 'phase 1', 'phase 2', 'phase 3', 'phase 4', 'phase 5', or any other numerical phase references on this page.",
+    "key_points": [
+        "This is a login page for Veriton Genesis Access.",
+        "Users must provide an email address and password to sign in.",
+        "A link to return to the homepage is present.",
+        "No mentions of '5 phases', 'phases', or specific numerical phases (1-5) were found on this page."
+    ],
+    "relevant_links": [
+        "/"
+    ],
+    "file_name": "veriton_login_page_content.json"
+}
+```

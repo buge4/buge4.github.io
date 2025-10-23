@@ -1,0 +1,30 @@
+📄 Extracted from page: 
+URL: https://veriton.io/
+
+Extracted content:
+```json
+{
+    "title": "Veriton: The Moment Everything Changes",
+    "url": "https://veriton.io/",
+    "summary": "The provided page content for Veriton, which introduces their patent-pending TVRF technology for generating pure, oracle-free randomness, discusses its applications in gaming, AI, finance, and NFTs, highlights its competitive advantages, market opportunity, and impact. However, a thorough review of the entire text reveals no mentions of \"5 phases\", \"phases\", \"phase 1\", \"phase 2\", \"phase 3\", \"phase 4\", \"phase 5\", or any other numerical phase references.",
+    "key_points": [
+        "The Veriton page introduces TVRF, a patent-pending technology for pure, oracle-free randomness.",
+        "The technology aims to solve the problem of truly random numbers in digital applications like gaming, AI, finance, and NFTs.",
+        "Key advantages highlighted include being 99.9% cheaper than competitors, instant processing, and requiring zero trust.",
+        "The page details the market opportunity ($800B+), competitive advantages (no competition, immediate revenue, network effects), and expected impact (economic, gaming, AI fairness, security enhancement).",
+        "Despite a comprehensive scan, the page content does not contain any mentions of \"phases\" or specific \"phase numbers\" (e.g., phase 1, phase 2, etc.) as per the extraction goal."
+    ],
+    "relevant_links": [
+        "#/technology",
+        "#/markets",
+        "#/impact",
+        "#/random-monitor",
+        "#/saas",
+        "#/login",
+        "#/admin",
+        "#/business-hub",
+        "#"
+    ],
+    "file_name": "veriton_phases_search.json"
+}
+```

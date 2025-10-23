@@ -1,0 +1,20 @@
+📄 Extracted from page: 
+URL: https://veriton.io/#/random-monitor
+
+Extracted content:
+```json
+{
+  "title": "Veriton.io Random Monitor Dashboard",
+  "url": "https://veriton.io/#/random-monitor",
+  "summary": "The Veriton.io Random Monitor page serves as a real-time dashboard for TVRF (True Randomness Verifiable Function) monitoring across Bitcoin (BTC), Ethereum (ETH), and TON blockchains. It presents the total number of transactions processed, their proportional distribution among the three chains, and offers live analysis for individual transactions. A notable feature is the 'First 3 Numbers Distribution' table, which assesses the statistical randomness of the initial digits (0-9) found in transactions, indicating their percentage distribution and corresponding Chi-Square values for statistical evaluation. There are no explicit mentions of 'phases' or 'phase X' terminology on this page.",
+  "key_points": [
+    "Real-time TVRF randomness monitoring is provided for BTC, ETH, and TON blockchains.",
+    "The dashboard displays a total of 20,788,415 transactions, distributed approximately equally among BTC (33.33%), ETH (33.33%), and TON (33.34%).",
+    "Live transaction analysis is available, showing numbers and letters found within specific transactions.",
+    "A 'First 3 Numbers Distribution' table evaluates the randomness of the first three digits (0-9) in transactions, aiming for approximately 10% distribution per digit, alongside Chi-Square statistical metrics.",
+    "Navigation options include Dashboard, Letters, Numbers, Transactions, and Analytics subsections like Number Position Analytics, Position Analytics, and Frequency Ranking System."
+  ],
+  "relevant_links": [],
+  "file_name": "veriton_random_monitor.json"
+}
+```

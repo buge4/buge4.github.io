@@ -1,0 +1,25 @@
+📄 Extracted from page: 
+URL: https://veriton.io/#/login
+
+Extracted content:
+```json
+{
+    "title": "Veriton Genesis Access",
+    "url": "https://veriton.io/#/login",
+    "summary": "This is a standard login page for 'Veriton Genesis Access'. It prompts users to sign in by entering their email address and password. There is a 'Sign In' button to submit the credentials and a link to return to the homepage. No elements related to messaging, chat, or communication features, visible or hidden, were found on this page.",
+    "key_points": [
+        "Login page for 'Veriton Genesis Access'.",
+        "Requires Email Address and Password for sign-in.",
+        "Includes a 'Sign In' button.",
+        "Provides a link to return to the homepage.",
+        "No elements or text indicating messaging, chat, or communication features are present."
+    ],
+    "relevant_links": [
+        {
+            "text": "Return to Homepage",
+            "href": "/"
+        }
+    ],
+    "file_name": "veriton_login_page_extraction.json"
+}
+```

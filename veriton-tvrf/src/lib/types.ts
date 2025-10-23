@@ -50,11 +50,11 @@ export interface AIConversation {
   timestamp: string;
 }
 
-// Kingmaker Army types - Supabase Schema
+// Kingmaker Army types
 export type AgentStatus = 'online' | 'working' | 'idle' | 'offline';
 
 export interface KingmakerAgent {
-  id: string; // UUID in Supabase
+  id: string;
   service_name: string;
   model_name: string;
   status: AgentStatus;
@@ -64,13 +64,12 @@ export interface KingmakerAgent {
   api_calls_today: number;
   total_api_calls: number;
   last_updated: string;
-  created_at?: string;
 }
 
 export type ProjectStatus = 'planning' | 'building' | 'testing' | 'deployed' | 'failed';
 
 export interface KingmakerProject {
-  id: string; // UUID in Supabase
+  id: string;
   name: string;
   description: string | null;
   status: ProjectStatus;
@@ -82,20 +81,11 @@ export interface KingmakerProject {
 }
 
 export interface KingmakerConversation {
-  id: string; // UUID in Supabase
+  id: string;
   project_id: string | null;
   user_message: string;
   ai_response: string | null;
   agent_used: string | null;
-  created_at: string;
-}
-
-export interface KingmakerUsageLog {
-  id: string;
-  agent_id: string;
-  tokens_used: number;
-  cost_usd: number;
-  operation_type: string;
   created_at: string;
 }
 
