@@ -1,0 +1,26 @@
+📄 Extracted from page: Workflow runs · buge4/buge4.github.io · GitHub
+URL: https://github.com/buge4/buge4.github.io/actions
+
+Extracted content:
+```json
+{
+  "title": "Workflow runs · buge4/buge4.github.io · GitHub",
+  "url": "https://github.com/buge4/buge4.github.io/actions",
+  "summary": "This page displays the first 25 GitHub Actions workflow runs for the 'buge4/buge4.github.io' repository, out of a total of 47 available runs. The visible runs primarily consist of 'Deploy to GitHub Pages' and 'pages-build-deployment' workflows. All listed runs were successfully executed by the user 'buge4' on the 'main' branch. Many of these workflows are associated with specific commit messages detailing fixes related to Single Page Application (SPA) routing, various deployment optimizations, and error resolutions for GitHub Pages.",
+  "key_points": [
+    "The page shows 25 workflow runs, which is the first page of a total of 47 runs.",
+    "Two main workflow types are observed: 'Deploy to GitHub Pages' and 'pages-build-deployment'.",
+    "All presented runs were initiated by 'buge4' and executed on the 'main' branch, indicating continuous integration/deployment activities.",
+    "All listed workflow runs appear to have completed successfully, as evidenced by their recorded durations and the absence of failure indicators.",
+    "Several 'Deploy to GitHub Pages' runs include commit messages addressing critical aspects like SPA routing fixes (e.g., 404.html redirects, hash navigation) and deployment-specific adjustments (e.g., managing the 'dist' directory, CNAME files, build tool updates).",
+    "The 'pages-build-deployment' workflows typically lack detailed commit messages within this view, often serving as a secondary, automated deployment step."
+  ],
+  "workflow_runs": [
+    {
+      "workflow_name": "Deploy to GitHub Pages",
+      "run_number": "#21",
+      "status": "success",
+      "duration": "38s",
+      "branch": "main",
+      "commit_details": {
+        "message": "Message 326451378765958 - 1761252902

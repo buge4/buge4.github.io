@@ -1,0 +1,34 @@
+📄 Extracted from page: 
+URL: https://veriton.io/
+
+Extracted content:
+```json
+{
+    "title": "Veriton",
+    "url": "https://veriton.io/",
+    "summary": "The Veriton.io page outlines the company's revolutionary patent-pending TVRF technology, which provides pure, oracle-free randomness for blockchain applications. It targets a multi-billion dollar market across Gaming, AI, Finance, and NFTs, emphasizing the critical need for truly random numbers in these sectors. The page highlights Veriton's competitive advantages including 99.9% cost reduction compared to alternatives like Chainlink VRF, instant processing, and zero trust verification. It details the 'perfect storm' of market conditions and Veriton's unique technical breakthrough that positions it for significant impact, promising economic value creation, fairer systems, and enhanced security across various industries. Due to the input being plain text content and not the actual page source, specific React.js indicators, JavaScript frameworks, messaging/chat functionality code, or detailed script/component analysis cannot be performed or extracted.",
+    "key_points": [
+        "Veriton introduces TVRF, a patent-pending technology for pure, oracle-free randomness on the blockchain, based on mathematics without external trust.",
+        "The technology addresses critical needs in Gaming ($400B), Security ($200B), AI/ML ($100B), and NFTs ($70B), identifying an $800B+ total addressable market.",
+        "Veriton's solution offers significant advantages: 99.9% cheaper than Chainlink VRF ($0.005 vs $4-25 per call), instant processing speed, and zero trust required.",
+        "The company highlights a 'perfect storm' of opportunity driven by blockchain maturity, regulatory clarity, market demand for transparency, their technical breakthrough, and the AI revolution.",
+        "Competitive advantages include patent protection (no one else can provide oracle-free blockchain randomness), lack of direct competition, immediate revenue potential, and strong network effects.",
+        "Anticipated impact includes over $50B in annual value creation, provably fair gaming, unbiased AI, and strengthened crypto security, aiming to impact 1 billion+ users by 2027.",
+        "The page structure clearly segments information into technology overview, market applications, timing, advantages, numerical metrics, competitive comparison, and societal impact.",
+        "No React.js indicators, specific JavaScript frameworks, messaging/chat functionality code, script details, or embedded chat widgets could be extracted from the provided plain text content."
+    ],
+    "relevant_links": [
+        "/",
+        "#technology",
+        "#markets",
+        "#impact",
+        "/random-monitor",
+        "/veriton-genesis",
+        "/saas",
+        "/login",
+        "/business-hub",
+        "#"
+    ],
+    "file_name": "veriton_page_content_summary.json"
+}
+```
