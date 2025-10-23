@@ -9,6 +9,8 @@ import Overview from './pages/business-hub/Overview';
 import RandomMonitor from './pages/RandomMonitor';
 import VeritonGenesis from './pages/VeritonGenesis';
 import SaaS from './pages/SaaS';
+import ChatPage from './pages/ChatPage';
+import ChatSystemTest from './components/ChatSystemTest';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/random-monitor" element={<RandomMonitor />} />
         <Route path="/veriton-genesis" element={<VeritonGenesis />} />
         <Route path="/saas" element={<SaaS />} />
+        <Route path="/chat" element={<ChatPage />} />
+        <Route path="/chat-test" element={<ChatSystemTest />} />
       </Routes>
     </Router>
   );

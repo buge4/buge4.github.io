@@ -21,6 +21,9 @@ export default function Header() {
             <a href="#impact" className="text-gray-700 hover:text-gray-900 transition">
               Impact
             </a>
+            <Link to="/chat" className="text-gray-700 hover:text-gray-900 transition">
+              Chat
+            </Link>
             <Link to="/random-monitor" className="text-gray-700 hover:text-gray-900 transition">
               Random Monitor
             </Link>
@@ -33,6 +36,12 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center space-x-4">
+            <Link
+              to="/chat"
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-medium"
+            >
+              Chat
+            </Link>
             <Link
               to="/admin"
               className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition text-sm font-medium"
