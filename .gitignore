@@ -895,3 +895,6 @@
 # uploads/
 # downloads/
 
+# GitHub Pages deployment requires dist/
+!dist/
+
