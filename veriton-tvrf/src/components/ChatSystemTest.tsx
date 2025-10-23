@@ -99,7 +99,7 @@ const ChatSystemTest = () => {
           <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
             <li>chat_channels</li>
             <li>chat_messages</li>
-            <li>channel_members</li>
+            <li>chat_channel_members</li>
             <li>employees</li>
           </ul>
         </div>

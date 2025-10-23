@@ -77,7 +77,7 @@ const ChatPage = () => {
     if (!user) return;
 
     const { data, error } = await supabase
-      .from('channel_members')
+      .from('chat_channel_members')
       .select(`
         channel_id,
         chat_channels!inner (

@@ -23,7 +23,7 @@ export const useChatRealtime = () => {
         {
           event: '*',
           schema: 'public',
-          table: 'channel_members',
+          table: 'chat_channel_members',
         },
         (payload) => {
           // Handle online status updates
