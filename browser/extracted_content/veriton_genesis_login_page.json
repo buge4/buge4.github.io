@@ -1,0 +1,25 @@
+📄 Extracted from page: 
+URL: http://localhost:9000/login
+
+Extracted content:
+```json
+{
+  "title": "Veriton Genesis Access",
+  "url": "http://localhost:9000/login",
+  "summary": "This page is a login portal titled \"Veriton Genesis Access\", instructing users to sign in to continue. It presents a login form requiring an 'Email Address' and 'Password' input, followed by a 'Sign In' button for submission. There is also a navigational link to return to the homepage.",
+  "key_points": [
+    "The page is titled \"Veriton Genesis Access\".",
+    "It is a login page prompting users to sign in.",
+    "A login form is present, with input fields for 'Email Address' and 'Password'.",
+    "There is a 'Sign In' button to submit the form.",
+    "A link to 'Return to Homepage' is provided for navigation."
+  ],
+  "relevant_links": [
+    {
+      "text": "Return to Homepage",
+      "url": "/"
+    }
+  ],
+  "file_name": "veriton_genesis_login_page.json"
+}
+```
