@@ -1,0 +1,25 @@
+📄 Extracted from page: Page not found · GitHub Pages
+URL: https://veriton.io/
+
+Extracted content:
+```json
+{
+  "title": "Page not found · GitHub Pages",
+  "url": "https://veriton.io/",
+  "summary": "This page is a standard GitHub Pages 404 error, indicating that the requested file or resource could not be found at the given address. It provides common troubleshooting tips for GitHub Pages users, such as checking filename case and permissions, and ensuring an `index.html` file exists for root URLs. It also links to GitHub Pages documentation and GitHub's status page.",
+  "key_points": [
+    "Error code: 404",
+    "Message: File not found",
+    "The site configured at this address does not contain the requested file.",
+    "Troubleshooting tip: Check if the filename case matches the URL.",
+    "Troubleshooting tip: Verify file permissions.",
+    "Troubleshooting tip: For root URLs (e.g., `http://example.com/`), an `index.html` file must be provided."
+  ],
+  "relevant_links": [
+    "https://help.github.com/pages/",
+    "https://githubstatus.com",
+    "https://twitter.com/githubstatus"
+  ],
+  "file_name": "github_pages_404_error.json"
+}
+```

@@ -1,0 +1,26 @@
+📄 Extracted from page: Page not found · GitHub Pages
+URL: https://buge4.github.io/
+
+Extracted content:
+```json
+{
+  "title": "Page not found · GitHub Pages",
+  "url": "https://buge4.github.io/",
+  "summary": "This page is a standard GitHub Pages 404 'File not found' error page. It indicates that the requested file could not be located at the specified address and provides common reasons for this error, such as incorrect filename case, file permissions, or the absence of an 'index.html' file for root URLs. It also includes links to the GitHub Pages documentation and GitHub's service status pages.",
+  "key_points": [
+    "The page displays a '404 File not found' error.",
+    "The site configured at the address does not contain the requested file.",
+    "Troubleshooting tip: Check if the filename case matches the URL.",
+    "Troubleshooting tip: Verify file permissions.",
+    "Troubleshooting tip: For root URLs (e.g., http://example.com/), an `index.html` file must be provided.",
+    "Provides a link to the full documentation for GitHub Pages.",
+    "Provides links to check GitHub's service status."
+  ],
+  "relevant_links": [
+    "https://help.github.com/pages/",
+    "https://githubstatus.com",
+    "https://twitter.com/githubstatus"
+  ],
+  "file_name": "github_pages_404_error_content.json"
+}
+```

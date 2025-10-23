@@ -1,0 +1,24 @@
+📄 Extracted from page: Branches · buge4/buge4.github.io · GitHub
+URL: https://github.com/buge4/buge4.github.io/branches
+
+Extracted content:
+```json
+{
+  "title": "Branches · buge4/buge4.github.io · GitHub",
+  "url": "https://github.com/buge4/buge4.github.io/branches",
+  "summary": "This page provides an overview of the branches in the 'buge4/buge4.github.io' GitHub repository. It lists one default branch, 'main', along with its last update time. Given the repository name, it's highly probable that this repository hosts a GitHub Pages site.",
+  "key_points": [
+    {
+      "branch_name": "main",
+      "last_update": "Oct 23, 2025",
+      "is_default": true
+    },
+    "The 'main' branch is the only branch listed and is designated as the default branch.",
+    "Given the repository name 'buge4.github.io', which follows the GitHub Pages naming convention for user/organization sites, the 'main' branch is highly likely configured for GitHub Pages deployment."
+  ],
+  "relevant_links": [
+    "/buge4/buge4.github.io"
+  ],
+  "file_name": "buge4_github_io_branches.json"
+}
+```
