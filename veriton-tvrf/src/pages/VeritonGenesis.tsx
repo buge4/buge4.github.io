@@ -5,8 +5,7 @@ import AgentCard from '../components/AgentCard';
 import CommandTerminal from '../components/CommandTerminal';
 import ProjectPipeline from '../components/ProjectPipeline';
 import AnalyticsDashboard from '../components/AnalyticsDashboard';
-import { db } from '../lib/firebase';
-import { collection, getDocs, onSnapshot, query, orderBy } from 'firebase/firestore';
+// Removed Firebase imports - using Supabase and mock data instead
 import { KingmakerAgent, KingmakerProject, SystemMetrics, AgentStatus, ProjectStatus } from '../lib/types';
 
 export default function VeritonGenesis() {
@@ -47,32 +46,11 @@ export default function VeritonGenesis() {
     });
   }, [agents, projects]);
 
-  // Subscribe to real-time agent updates
+  // Using mock data - Firebase connection removed
   useEffect(() => {
-    const agentsQuery = collection(db, 'kingmaker_agents');
-    const unsubscribe = onSnapshot(agentsQuery, (snapshot) => {
-      fetchAgents();
-    }, (error) => {
-      console.error('Error in agent subscription:', error);
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  }, []);
-
-  // Subscribe to real-time project updates
-  useEffect(() => {
-    const projectsQuery = collection(db, 'kingmaker_projects');
-    const unsubscribe = onSnapshot(projectsQuery, (snapshot) => {
-      fetchProjects();
-    }, (error) => {
-      console.error('Error in project subscription:', error);
-    });
-
-    return () => {
-      unsubscribe();
-    };
+    // Use mock data directly
+    setAgents(getMockAgents());
+    setProjects(getMockProjects());
   }, []);
 
   const fetchAgents = async () => {
