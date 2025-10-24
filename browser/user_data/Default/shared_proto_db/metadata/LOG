@@ -1,4 +1,0 @@
-2025/10/23-17:35:30.698 8c5 Creating DB /workspace/browser/user_data/Default/shared_proto_db/metadata since it was missing.
-2025/10/23-17:35:30.726 8c5 Reusing MANIFEST /workspace/browser/user_data/Default/shared_proto_db/metadata/MANIFEST-000001
-2025/10/23-17:35:30.734 8c5 Recovering log #3
-2025/10/23-17:35:30.738 8c5 Reusing old log /workspace/browser/user_data/Default/shared_proto_db/metadata/000003.log 
