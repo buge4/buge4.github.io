@@ -3,23 +3,30 @@
     "Coordinator": {
       "1": {
         "id": "1",
-        "content": "EMERGENCY: Fix veriton.io 404 error - Domain/GitHub Pages configuration",
-        "details": "Site is completely broken with 404 errors. Fix DNS, GitHub Pages settings, and deployment issues immediately.",
-        "status": "completed",
+        "content": "CRISIS: Fix Authentication System & Access Control",
+        "details": "Implement proper authentication using provided credentials (bvhauge@gmail.com / Trysil416!) and create 4 total users. Fix access denied issues for /chat and /veriton-genesis routes.",
+        "status": "pending",
         "priority": "high"
       },
       "2": {
         "id": "2",
-        "content": "Build missing employee messaging frontend UI",
-        "details": "Backend exists but NO frontend messaging interface. Build: chat interface, message components, employee directory, admin messaging panel.",
-        "status": "completed",
+        "content": "Implement AI Assistant Feature for All Employees",
+        "details": "Add AI assistant functionality accessible to all employee users. Each employee should have their own AI assistant integration.",
+        "status": "pending",
         "priority": "high"
       },
       "3": {
         "id": "3",
-        "content": "Deploy and test complete system",
-        "details": "Deploy everything to veriton.io and conduct thorough testing of ALL functions to ensure nothing is broken.",
-        "status": "completed",
+        "content": "Create AI Admin Feature",
+        "details": "Implement AI Admin functionality with elevated permissions and management capabilities for system administration.",
+        "status": "pending",
+        "priority": "high"
+      },
+      "4": {
+        "id": "4",
+        "content": "Deploy & Test Full System",
+        "details": "Deploy all changes and conduct comprehensive testing to ensure all features work correctly across both domains.",
+        "status": "pending",
         "priority": "high"
       }
     }

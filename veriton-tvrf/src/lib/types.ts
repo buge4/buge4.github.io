@@ -56,14 +56,18 @@ export type AgentStatus = 'online' | 'working' | 'idle' | 'offline';
 export interface KingmakerAgent {
   id: string;
   service_name: string;
-  model_name: string;
+  model_name?: string;
   status: AgentStatus;
   current_task: string | null;
   response_time_ms: number;
   success_rate: number;
-  api_calls_today: number;
-  total_api_calls: number;
+  api_calls_today?: number;
+  total_api_calls?: number;
   last_updated: string;
+  api_usage_count?: number;
+  cost_today?: number;
+  tokens_used?: number;
+  created_at?: string;
 }
 
 export type ProjectStatus = 'planning' | 'building' | 'testing' | 'deployed' | 'failed';
@@ -71,13 +75,14 @@ export type ProjectStatus = 'planning' | 'building' | 'testing' | 'deployed' | '
 export interface KingmakerProject {
   id: string;
   name: string;
-  description: string | null;
+  description?: string | null;
   status: ProjectStatus;
   progress_percentage: number;
   assigned_agents: string[];
   deployment_url: string | null;
   created_at: string;
   updated_at: string;
+  completed_at?: string | null;
 }
 
 export interface KingmakerConversation {

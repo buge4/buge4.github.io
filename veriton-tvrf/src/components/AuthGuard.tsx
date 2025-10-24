@@ -19,9 +19,8 @@ const AuthGuard = ({ children, redirectTo = '/chat' }: AuthGuardProps) => {
   }
 
   if (!user) {
-    // For now, we'll redirect to the main page
-    // In a real app, you'd redirect to a login page
-    return <Navigate to="/" replace />;
+    // Redirect to login page for unauthenticated users
+    return <Navigate to="/login" replace />;
   }
 
   return <>{children}</>;

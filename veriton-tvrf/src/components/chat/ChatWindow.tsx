@@ -5,6 +5,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { ChatChannel, ChatMessage } from '../../pages/ChatPage';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
+import AIAssistant from './AIAssistant';
 
 interface ChatWindowProps {
   channel: ChatChannel;
@@ -107,7 +108,7 @@ const ChatWindow = ({ channel, onBack }: ChatWindowProps) => {
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full relative">
       {/* Header */}
       <div className="bg-white border-b border-gray-200 px-6 py-4">
         <div className="flex items-center justify-between">
@@ -152,6 +153,9 @@ const ChatWindow = ({ channel, onBack }: ChatWindowProps) => {
           placeholder={`Message ${formatChannelName(channel)}`}
         />
       </div>
+
+      {/* AI Assistant */}
+      <AIAssistant channelContext={`Chat channel: ${formatChannelName(channel)}`} />
     </div>
   );
 };

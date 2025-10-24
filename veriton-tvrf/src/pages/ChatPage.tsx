@@ -96,7 +96,7 @@ const ChatPage = () => {
       return;
     }
 
-    const channelData = data?.map(item => item.chat_channels) || [];
+    const channelData = data?.map(item => item.chat_channels).flat() || [];
     setChannels(channelData);
     
     // Set the first channel as active if none selected

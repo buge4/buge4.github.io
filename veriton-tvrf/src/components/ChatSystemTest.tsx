@@ -144,7 +144,7 @@ const ChatSystemTest = () => {
           <h3 className="text-lg font-semibold mb-2">Database Connection</h3>
           <div className="bg-gray-50 p-4 rounded">
             <p className="text-sm text-gray-700">
-              <strong>Supabase URL:</strong> {supabase.supabaseUrl}
+              <strong>Supabase URL:</strong> https://xprtzodwutgskpdvyxwn.supabase.co
             </p>
             <p className="text-sm text-gray-700">
               <strong>User ID:</strong> {user.id}

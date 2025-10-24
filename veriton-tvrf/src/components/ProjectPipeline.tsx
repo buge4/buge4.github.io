@@ -68,12 +68,12 @@ export default function ProjectPipeline({ projects }: ProjectPipelineProps) {
               {/* Header */}
               <div className="flex items-start justify-between mb-3">
                 <h4 className="text-base font-semibold text-[#f5f7fa] flex-1">
-                  {project.project_name}
+                  {project.name}
                 </h4>
                 <span
                   className={`
                     px-3 py-1 rounded-full text-xs font-medium
-                    ${config.bg} ${config.text} ${config.glow || ''}
+                    ${config.bg} ${config.text}
                   `}
                 >
                   {config.label}
